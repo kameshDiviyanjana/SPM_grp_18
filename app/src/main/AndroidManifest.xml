@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +15,9 @@
         android:theme="@style/Theme.Cataract_and_conjunctivitis_detection"
         tools:targetApi="31">
         <activity
+            android:name=".DisplayDoctor"
+            android:exported="false" />
+        <activity
             android:name=".cataract_detection"
             android:exported="false">
             <meta-data
@@ -20,7 +25,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".home"
+            android:name=".Home"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -46,6 +51,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".BookingDashboard"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        </activity>
+
     </application>
 
 </manifest>
