@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class Home : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var btnCataractDetection : Button
     private lateinit var btnChannel : Button
@@ -24,7 +24,7 @@ class Home : AppCompatActivity() {
 
         btnChannel.setOnClickListener {
 
-            val intent = Intent(this, BookingDashboard::class.java)
+            val intent = Intent(this, BookingDashboardActivity::class.java)
             startActivity(intent)
         }
 

@@ -4,49 +4,50 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adapter.DoctorAdapter
-import com.example.data.Doctor
+import com.example.adapter.ViewBookingAdapter
+import com.example.data.Booking
 import com.google.firebase.database.*
 
-class DisplayDoctor : AppCompatActivity() {
+class ViewBookingActivity : AppCompatActivity() {
 
     private lateinit var dbref : DatabaseReference
-    private lateinit var doctorRecyclerView : RecyclerView
-    private lateinit var doctorArrayList : ArrayList<Doctor>
+    private lateinit var bookingRecyclerView : RecyclerView
+    private lateinit var bookingArrayList : ArrayList<Booking>
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_display_doctor)
+        setContentView(R.layout.activity_display_bookings)
 
-        doctorRecyclerView = findViewById(R.id.doctorRecyclerView)
-        doctorRecyclerView.layoutManager = LinearLayoutManager(this)
-        doctorRecyclerView.setHasFixedSize(true)
+        bookingRecyclerView = findViewById(R.id.doctorRecyclerView)
+        bookingRecyclerView.layoutManager = LinearLayoutManager(this)
+        bookingRecyclerView.setHasFixedSize(true)
 
-        doctorArrayList = arrayListOf<Doctor>()
+        bookingArrayList = arrayListOf<Booking>()
         getUserData()
 
     }
 
     private fun getUserData(){
 
-        dbref = FirebaseDatabase.getInstance().getReference("Doctor")
+        dbref = FirebaseDatabase.getInstance().getReference("bookings")
 
         dbref.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
+                bookingArrayList.clear()
                 if(snapshot.exists()){
 
                     for (userSnapshot in snapshot.children){
 
-                        val doctor = userSnapshot.getValue(Doctor::class.java)
-                        doctorArrayList.add(doctor!!)
+                        val booking = userSnapshot.getValue(Booking::class.java)
+                        bookingArrayList.add(booking!!)
 
                     }
 
-                    doctorRecyclerView.adapter = DoctorAdapter(doctorArrayList)
+                    bookingRecyclerView.adapter = ViewBookingAdapter(bookingArrayList)
                 }
 
             }

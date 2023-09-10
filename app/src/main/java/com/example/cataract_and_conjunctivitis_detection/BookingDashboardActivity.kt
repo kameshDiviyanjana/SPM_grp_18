@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class BookingDashboard: AppCompatActivity() {
+class BookingDashboardActivity: AppCompatActivity() {
     private lateinit var btnAddBook : Button
     private lateinit var btnViewBook : Button
 
@@ -20,7 +20,13 @@ class BookingDashboard: AppCompatActivity() {
 
         btnViewBook.setOnClickListener {
 
-            val intent = Intent(this, DisplayDoctor::class.java)
+            val intent = Intent(this, ViewBookingActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnAddBook.setOnClickListener {
+
+            val intent = Intent(this, AddBookingActivity::class.java)
             startActivity(intent)
         }
     }

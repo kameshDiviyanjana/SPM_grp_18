@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
               val  p = disname.toString()
               if ((userName ==auser) && (userpassword == passw)){
 
-                  val os = Intent(this,Home::class.java)
+                  val os = Intent(this,HomeActivity::class.java)
                   startActivity(os)
               }else{
                   Toast.makeText(this,"Fill all Fields",Toast.LENGTH_LONG).show()

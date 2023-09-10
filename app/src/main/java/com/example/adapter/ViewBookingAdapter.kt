@@ -6,31 +6,33 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cataract_and_conjunctivitis_detection.R
-import com.example.data.Doctor
+import com.example.data.Booking
 
-class DoctorAdapter(private val doctorList: List<Doctor>) :
-    RecyclerView.Adapter<DoctorAdapter.ViewHolder>() {
+class ViewBookingAdapter(private val BookingList: ArrayList<Booking>) :
+    RecyclerView.Adapter<ViewBookingAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.tvName)
-        val specialty: TextView = itemView.findViewById(R.id.tvSpecialty)
+        val date: TextView = itemView.findViewById(R.id.tvDate)
+        val time: TextView = itemView.findViewById(R.id.tvTime)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_doctor_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_booking_item, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val doctor = doctorList[position]
+        val booking = BookingList[position]
 
-        holder.name.text = doctor.name
-        holder.specialty.text = doctor.specialty
+        holder.name.text = booking.doctorName
+        holder.date.text = booking.getFormattedDate()
+        holder.time.text = booking.getFormattedTime()
 
 
     }
 
     override fun getItemCount(): Int {
-        return doctorList.size
+        return BookingList.size
     }
 }

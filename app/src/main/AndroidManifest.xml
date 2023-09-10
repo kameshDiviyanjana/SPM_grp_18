@@ -15,7 +15,10 @@
         android:theme="@style/Theme.Cataract_and_conjunctivitis_detection"
         tools:targetApi="31">
         <activity
-            android:name=".DisplayDoctor"
+            android:name=".AddBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewBookingActivity"
             android:exported="false" />
         <activity
             android:name=".cataract_detection"
@@ -25,7 +28,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Home"
+            android:name=".HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -52,14 +55,12 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookingDashboard"
+            android:name=".BookingDashboardActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
-
     </application>
 
 </manifest>
