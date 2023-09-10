@@ -20,6 +20,7 @@ class AddBookingActivity : AppCompatActivity() {
     private lateinit var btnBookAppointment: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_booking)
 
@@ -67,11 +68,13 @@ class AddBookingActivity : AppCompatActivity() {
                 // You can also reset the DatePicker to the current date if needed
                 datePicker.updateDate(
                     currentDate.get(Calendar.YEAR),
+
                     currentDate.get(Calendar.MONTH),
                     currentDate.get(Calendar.DAY_OF_MONTH)
                 )
             }
         }
+
 
 
 
@@ -98,6 +101,8 @@ class AddBookingActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun bookAppointment() {
         // Retrieve selected doctor
         val selectedDoctor = spinnerDoctor.selectedItem.toString()
@@ -119,8 +124,6 @@ class AddBookingActivity : AppCompatActivity() {
         if (bookingId != null) {
             databaseReference.child(bookingId).setValue(booking)
         }
-
-
 
         finish()
     }
