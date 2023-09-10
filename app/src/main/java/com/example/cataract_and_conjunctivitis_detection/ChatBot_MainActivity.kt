@@ -5,7 +5,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cataract_and_conjunctivitis_detection.R
 import com.example.cataract_and_conjunctivitis_detection.Message
 import com.example.cataract_and_conjunctivitis_detection.Constants.RECEIVE_ID
 import com.example.cataract_and_conjunctivitis_detection.Constants.SEND_ID
@@ -20,14 +19,14 @@ import kotlinx.android.synthetic.main.activity_main_chatbot.rv_messages
 import kotlinx.coroutines.*
 
 class ChatBot_MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
+//    private val TAG = "MainActivity"
 
     //You can ignore this messageList if you're coming from the tutorial,
     // it was used only for my personal debugging
     var messagesList = mutableListOf<Message>()
 
     private lateinit var adapter: MessagingAdapter
-    private val botList = listOf("Peter", "Francesca", "Luigi", "Igor")
+//    private val botList = listOf("Peter", "Francesca", "Luigi", "Igor")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +37,7 @@ class ChatBot_MainActivity : AppCompatActivity() {
         clickEvents()
 
         val random = (0..3).random()
-        customBotMessage("Hello! Today you're speaking with ${botList[random]}, how may I help?")
+        customBotMessage("Hello! how may I help?")
     }
 
     private fun clickEvents() {
