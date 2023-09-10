@@ -4,6 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E88B8B"
+    android:backgroundTint="#C9DDE6"
     tools:context=".home">
 
+    <Button
+        android:id="@+id/btncatr"
+        android:layout_width="157dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="360dp"
+        android:backgroundTint="#DDA552"
+        android:text="cataract"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnchat"
+        android:layout_width="157dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="244dp"
+        android:backgroundTint="#3988AC"
+        android:text="chat bot"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnchenl"
+        android:layout_width="157dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="244dp"
+        android:backgroundTint="#C65D3C"
+        android:text="chanel"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnreminder"
+        android:layout_width="157dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="360dp"
+        android:backgroundTint="#D64A4A"
+        android:text="reminder"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
