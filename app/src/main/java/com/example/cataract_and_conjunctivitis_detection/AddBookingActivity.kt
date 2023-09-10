@@ -1,4 +1,5 @@
 package com.example.cataract_and_conjunctivitis_detection
+import android.icu.util.Calendar
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -30,6 +31,49 @@ class AddBookingActivity : AppCompatActivity() {
         datePicker = findViewById(R.id.datePicker)
         timePicker = findViewById(R.id.timePicker)
         btnBookAppointment = findViewById(R.id.btnBookAppointment)
+
+        val datePicker = findViewById<DatePicker>(R.id.datePicker)
+
+// Get the current date
+        val currentDate = Calendar.getInstance()
+
+// Set the minimum date to the current date
+        datePicker.minDate = currentDate.timeInMillis
+
+// Set the OnDateChangedListener
+        datePicker.init(
+            currentDate.get(Calendar.YEAR),
+            currentDate.get(Calendar.MONTH),
+            currentDate.get(Calendar.DAY_OF_MONTH)
+        ) { _, year, monthOfYear, dayOfMonth ->
+            // Handle date changes here, if needed
+        }
+
+        datePicker.init(
+            currentDate.get(Calendar.YEAR),
+            currentDate.get(Calendar.MONTH),
+            currentDate.get(Calendar.DAY_OF_MONTH)
+        ) { _, year, monthOfYear, dayOfMonth ->
+            val selectedDate = Calendar.getInstance()
+            selectedDate.set(year, monthOfYear, dayOfMonth)
+
+            // Check if the selected date is in the future
+            if (selectedDate.after(currentDate)) {
+                // The selected date is in the future, you can proceed
+                // Do any other date-related handling here, if needed
+            } else {
+                // The selected date is not in the future, show an error message or take appropriate action
+                Toast.makeText(this@AddBookingActivity, "Invalid date selection.", Toast.LENGTH_SHORT).show()
+                // You can also reset the DatePicker to the current date if needed
+                datePicker.updateDate(
+                    currentDate.get(Calendar.YEAR),
+                    currentDate.get(Calendar.MONTH),
+                    currentDate.get(Calendar.DAY_OF_MONTH)
+                )
+            }
+        }
+
+
 
         // Set up doctor selection (populate spinner)
         val doctorOptions = arrayOf("DR AJITH ABEYGUNASEKERA", "DR CHAMEERA BANDARA", "DR KAPILA BANDUTHILAKA") // Replace with your doctor data

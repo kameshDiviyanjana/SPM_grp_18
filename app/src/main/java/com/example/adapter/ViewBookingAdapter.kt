@@ -1,5 +1,6 @@
 package com.example.adapter
 
+import android.icu.util.Calendar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,17 @@ class ViewBookingAdapter(private val BookingList: ArrayList<Booking>) :
         val time: TextView = itemView.findViewById(R.id.tvTime)
     }
 
+
+    private fun isValidBookingDate(booking: Booking): Boolean {
+
+        val currentDate = Calendar.getInstance()
+        val bookingDate = Calendar.getInstance()
+        bookingDate.set(booking.year, booking.month - 1, booking.day) // month is 0-based in Calendar
+        return !bookingDate.before(currentDate)
+    }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_booking_item, parent, false)
         return ViewHolder(view)
@@ -29,10 +41,19 @@ class ViewBookingAdapter(private val BookingList: ArrayList<Booking>) :
         holder.date.text = booking.getFormattedDate()
         holder.time.text = booking.getFormattedTime()
 
+        if (isValidBookingDate(booking)) {
+            holder.itemView.isEnabled = true
+            holder.itemView.alpha = 1.0f
+        } else {
+            // Disable and dim the view for invalid dates
+            holder.itemView.isEnabled = false
+            holder.itemView.alpha = 0.5f
+        }
 
     }
-
     override fun getItemCount(): Int {
         return BookingList.size
     }
+
+
 }

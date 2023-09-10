@@ -16,6 +16,7 @@ class ViewBookingActivity : AppCompatActivity() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_bookings)
@@ -27,12 +28,12 @@ class ViewBookingActivity : AppCompatActivity() {
         bookingArrayList = arrayListOf<Booking>()
         getUserData()
 
+
     }
 
     private fun getUserData(){
 
         dbref = FirebaseDatabase.getInstance().getReference("bookings")
-
         dbref.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
