@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 
 class home : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -16,7 +17,11 @@ class home : AppCompatActivity() {
           var chatbot = findViewById<Button>(R.id.btnchat)
         var ctractdet = findViewById<Button>(R.id.btncatr)
         var reminder = findViewById<Button>(R.id.btnreminder)
+        var disnamr = findViewById<TextView>(R.id.textView3)
+        val buble : Bundle?= intent.extras
 
+        var name  = buble!!.getString("niknakes")
+        disnamr.text = name
 
         ctractdet.setOnClickListener {
             val go = Intent(this,cataract_detection::class.java)
