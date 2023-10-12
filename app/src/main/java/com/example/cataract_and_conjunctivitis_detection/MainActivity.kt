@@ -42,10 +42,11 @@ class MainActivity : AppCompatActivity() {
               val disname = it.child("displayename").value
 
 
-              val  p = disname.toString()
+              val  p = auser.toString()
               if ((userName ==auser) && (userpassword == passw)){
 
                   val os = Intent(this,home::class.java)
+                  os.putExtra("niknakes",p)
                   startActivity(os)
               }else{
                   Toast.makeText(this,"Fill all Fields",Toast.LENGTH_LONG).show()
