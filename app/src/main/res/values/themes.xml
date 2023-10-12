@@ -54,4 +54,17 @@
 
 
     </style>
+    <style name="custom_card_vive_home" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/custom_card_vive_homegs</item>
+    </style>
+    <style name="custom_card_vive_homegs" parent="">
+
+        <item name="cornerFamily" >rounded</item>
+        <item name="cornerSizeTopLeft">200dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+
+
+    </style>
 </resources>
