@@ -40,13 +40,14 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="195dp"
-        android:layout_height="43dp"
+        android:layout_width="268dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/classified"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="76dp"
         android:text=""
-        android:textColor="#C30000"
+        android:textAlignment="center"
+        android:textColor="#692BE6"
         android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,13 +76,13 @@
         android:layout_height="25dp"
         android:layout_below="@+id/confidencesText"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:text=""
         android:textColor="#000"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
@@ -105,10 +106,10 @@
                 android:id="@+id/imageView"
                 android:layout_width="400dp"
                 android:layout_height="315dp"
-                tools:layout_editor_absoluteX="-45dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-47dp"
                 tools:layout_editor_absoluteY="-13dp"
-                tools:srcCompat="@drawable/ic_baseline_remove_red_eye_24"
-                tools:ignore="MissingConstraints" />
+                tools:srcCompat="@drawable/ic_baseline_remove_red_eye_24" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -128,11 +129,14 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_width="379dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="256dp"
-        android:text="TextView"
+        android:text="scan to eye click The Tkae picture buttone  or uplode pic "
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
