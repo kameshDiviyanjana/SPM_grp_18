@@ -13,7 +13,7 @@ class ViewBookingAdapter(private val BookingList: ArrayList<Booking>) :
     RecyclerView.Adapter<ViewBookingAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name: TextView = itemView.findViewById(R.id.tvName)
+        val name: TextView = itemView.findViewById(R.id.tvDoctorName)
         val date: TextView = itemView.findViewById(R.id.tvDate)
         val time: TextView = itemView.findViewById(R.id.tvTime)
     }

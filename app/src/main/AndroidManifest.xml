@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Cataract_and_conjunctivitis_detection"
         tools:targetApi="31">
         <activity
+            android:name=".BookingDetails"
+            android:exported="false" />
+        <activity
             android:name=".AddBookingActivity"
             android:exported="false" />
         <activity
